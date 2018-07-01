@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+</head>
+<body>
+<div ng-app="app">
+    <div class="calculator" ng-controller="Converter">
+        <div ng-model="error" class="error-readout">{{error}}</div>
+            <input class="readout" type='readonly' disabled ng-model="consoleRate">
+        <input class="readout" type='readonly' disabled ng-model="consoleQty">
+
+        <div class="keys" data-ng-init="fetchAllCurrencies()">
+            <div class="row">
+                <select class="currency misc" id="from-currency" ng-model="fromCurrencySelected"
+                        ng-change="changedValue()"
+                        data-ng-options="currency as currency.id + ' ('+ currency.currencyName + ')' for currency in currencies">
+               <option value="">From</option>
+                </select>
+
+                <select class="currency misc" id="to-currency" ng-model="toCurrencySelected"
+                        ng-change="changedValue()"
+                        data-ng-options="currency as currency.id + ' ('+ currency.currencyName + ')' for currency in currencies">
+                    <option value="">To</option>
+                </select>
+            </div>
+            <div class="row">
+                <button class="key numeric" ng-click="print(7)">7</button>
+                <button class="key numeric" ng-click="print(8)">8</button>
+                <button class="key numeric" ng-click="print(9)">9</button>
+                <button class="key numeric last" ng-click="print(0)">0</button>
+            </div>
+            <div class="row">
+                <button class="key numeric" ng-click="print(4)">4</button>
+                <button class="key numeric" ng-click="print(5)">5</button>
+                <button class="key numeric" ng-click="print(6)">6</button>
+                <button class="key function" ng-click="switch()">⇄</button>
+            </div>
+            <div class="row">
+                <button class="key numeric" ng-click="print(1)">1</button>
+                <button class="key numeric" ng-click="print(2)">2</button>
+                <button class="key numeric" ng-click="print(3)">3</button>
+                <button class="key function" ng-click="clearTotal()">C</button>
+            </div>
+            <div class="row">
+                <button class="key numeric" ng-click="print('.')">.</button>
+                <button class="key function double" ng-model="from_curr">
+                   <!-- <span ng-model="from_curr"></span> -
+                    <span ng-model="to_curr"></span>-->
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
+<script src="javascripts/index.js" type="text/javascript"></script>
+<script src="javascripts/idb/lib/idb.js" type="text/javascript"></script>
+
+</body>
+</html>

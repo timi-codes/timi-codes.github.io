@@ -1,0 +1,141 @@
+
+*:focus {
+  outline: 0;
+}
+
+body {
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  background: #ffebd2;
+}
+
+.readout {
+  font-size: 45px;
+  color: #ffffff;
+  background: transparent;
+  box-sizing: border-box;
+  display: block;
+  width: inherit;
+  border: 0;
+  margin: 7px 0 0 0;
+  text-align: right;
+  padding: 0 10px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+.error-readout{
+  background: red;
+  color: white;
+  padding-left: 3px;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0em;
+}
+
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -260px;
+  margin-left: -115px;
+  width: 331px;
+  height: 520px;
+  background: rgba(75, 75, 75, 0.65);
+  border-right: 1px solid #646464;
+  border-bottom: 1px solid #343434;
+  border-left: 1px solid #646464;
+  border-top: 1px solid #939393;
+}
+
+
+.row {
+  padding-top: 1px;
+  clear: both;
+}
+
+.key:first-child {
+  margin-left: 0px;
+}
+
+.key {
+  width: 82px;
+  height: 87px;
+  font-size: 22px;
+  border: 0;
+  float: left;
+  margin-left: 1px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.misc {
+  background: #ff8c00;
+  font-size: 8px;
+  font-family: "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue",
+  Helvetica, Arial, sans-serif;
+  color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0px;
+}
+
+.currency{
+  width: 164px;
+  height: 47px;
+  font-size: 16px;
+  border: 0 none;
+  float: left;
+  margin-left: 1px;
+  margin-right: 0px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+
+select:not([multiple]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+  padding: .5em;
+  padding-right: 1.3em;
+  padding-left: .5em
+
+}
+
+
+.function {
+  background: #ff8c00;
+  color: white;
+  font-size: 25px;
+}
+
+.double {
+   width: 248px;
+   text-align: center;
+ }
+
+
+.numeric {
+  background: #e0e0e0;
+  font-family: "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue",
+  Helvetica, Arial, sans-serif;
+ }

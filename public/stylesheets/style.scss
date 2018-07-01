@@ -1,0 +1,132 @@
+//@import "compass/css3";
+
+$readout: rgba(75, 75, 75, 0.65);
+$key-misc: #d6d6d6;
+$key-function: #ff8c00;
+$key-numeric: #e0e0e0;
+
+$readout-color: #ffffff;
+$key-color: #000000;
+
+body {
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  background: #ffebd2;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0em;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -160px;
+  margin-left: -115px;
+  width: 231px;
+  height: 320px;
+  background: $readout;
+  border-right: 1px solid #646464;
+  border-bottom: 1px solid #343434;
+  border-left: 1px solid #646464;
+  border-top: 1px solid #939393;
+  @include border-radius(6px);
+  @include single-box-shadow(0, 0, 20px, 0,rgba(50,50,50,0.75), false);
+  //cursor: arrow;
+}
+
+.readout {
+  font-size: 45px;
+  color: $readout-color;
+  background: transparent;
+  box-sizing: border-box;
+  display: block;
+  width: inherit;
+  border: 0;
+  margin: 20px 0 0 0;
+  text-align: right;
+  padding: 0 10px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+.keys {
+  position: absolute;
+  bottom: 0;
+}
+
+.row {
+  padding-top: 1px;
+  clear: both;
+
+  .key:first-child {
+    margin-left: 0px;
+  }
+}
+.key {
+  width: 57px;
+  height: 47px;
+  font-size: 22px;
+  border: 0;
+  float: left;
+  margin-left: 1px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  &.double {
+    width: 115px;
+    text-align: left;
+    padding-left: 25px;
+    @include border-bottom-left-radius(6px);
+  }
+
+  &.last {
+    @include border-bottom-right-radius(6px);
+  }
+}
+
+.misc {
+  background: $key-misc;
+  font-size: 20px;
+  font-family: "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue",
+  Helvetica, Arial, sans-serif;
+  &:active {
+    background-color: darken($key-misc, 15%);
+  }
+}
+
+.function {
+  background: $key-function;
+  color: $readout-color;
+  font-size: 25px;
+  &:active {
+    background-color: darken($key-function, 15%);
+  }
+}
+
+.numeric {
+  background: $key-numeric;
+  font-family: "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue",
+  Helvetica, Arial, sans-serif;
+  &:active {
+    background-color: darken($key-numeric, 15%);
+  }
+}
