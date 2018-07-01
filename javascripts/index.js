@@ -218,8 +218,8 @@ function Converter($scope, $http) {
      * this clears the rate console
      */
     $scope.clearTotal = function () {
-        $scope.consoleQty = "";
-        $scope.consoleRate= "";
+       // $scope.consoleQty = "";
+        $scope.consoleQty  = $scope.consoleQty.slice(0, $scope.consoleQty.length-1);
         // $scope.changedValue()
     }
 }
