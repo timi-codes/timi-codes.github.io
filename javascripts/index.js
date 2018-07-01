@@ -207,9 +207,6 @@ function Converter($scope, $http) {
      * @param n
      */
     $scope.print = function (n) {
-        if ($scope.consoleQty.length==1 && $scope.consoleQty=="1") {
-            $scope.consoleQty.length =""
-        }else
             $scope.consoleRate = $scope.consoleQty * $scope.consoleRate;
         $scope.consoleQty = $scope.consoleQty.toLocaleString() + n;
     }
@@ -220,6 +217,7 @@ function Converter($scope, $http) {
     $scope.clearTotal = function () {
        // $scope.consoleQty = "";
         $scope.consoleQty  = $scope.consoleQty.slice(0, $scope.consoleQty.length-1);
+        $scope.consoleRate = $scope.consoleQty * $scope.consoleRate;
         // $scope.changedValue()
     }
 }

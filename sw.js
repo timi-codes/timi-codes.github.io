@@ -5,7 +5,7 @@ var urlsToCache = [
     'javascripts/index.js',
     'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js',
     'https://free.currencyconverterapi.com/api/v5/currencies',
-    'javascripts/idb/lib/idb.js'
+    'javascripts/idb/lib/idb.js',
 ];
 
 
