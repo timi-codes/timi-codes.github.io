@@ -93,11 +93,12 @@ function fetchFromDatabase(symbol, amount, $scope) {
 
         if (data==null){
             $scope.error = "Oops. You can't convert that currency offline."
+            $scope.rate = '';
             return
         }
 
         //console.log(numeral(amount * data.value).format('0.000'));
-        $scope.consoleRate = data.value;
+        $scope.rate = data.value;
 
     });
 }
@@ -116,10 +117,6 @@ function fetchFromDatabase(symbol, amount, $scope) {
 angular.module('app', []).controller('Converter', ['$scope', '$http', Converter]);
 
 function Converter($scope, $http) {
-    $scope.consoleRate = '';
-
-    let _total = 0;
-    let _state = null;
 
 
     //method that gets called when selected item changes.
@@ -155,8 +152,12 @@ function Converter($scope, $http) {
                     //using es6 arrow function to convert object to array
                     let rates = Object.keys(response.data).map(i => response.data[i]);
                     for (const rate of rates) {
-                        $scope.consoleRate = rate.toFixed(3);
-                        $scope.consoleQty = 1;
+                        $scope.rate = rate.toFixed(3);
+
+                        if ($scope.consoleQty!==undefined) {
+                            $scope.totalCal = $scope.consoleQty * $scope.rate;
+                        }
+
 
                         // save object results for later use
                         let object = {
@@ -207,8 +208,14 @@ function Converter($scope, $http) {
      * @param n
      */
     $scope.print = function (n) {
-            $scope.consoleRate = $scope.consoleQty * $scope.consoleRate;
-        $scope.consoleQty = $scope.consoleQty.toLocaleString() + n;
+
+                if ($scope.consoleQty===undefined) {
+                    $scope.consoleQty = n;
+                }else{
+                    $scope.consoleQty = $scope.consoleQty.toLocaleString() + n;
+                    $scope.totalCal = $scope.rate * $scope.consoleQty;
+                }
+
     }
 
     /**
@@ -216,8 +223,8 @@ function Converter($scope, $http) {
      */
     $scope.clearTotal = function () {
        // $scope.consoleQty = "";
+        if($scope.consoleQty)
         $scope.consoleQty  = $scope.consoleQty.slice(0, $scope.consoleQty.length-1);
-        $scope.consoleRate = $scope.consoleQty * $scope.consoleRate;
-        // $scope.changedValue()
+        $scope.totalCal = $scope.consoleQty * $scope.rate;
     }
 }

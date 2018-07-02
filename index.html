@@ -7,7 +7,7 @@
 <div ng-app="app">
     <div class="calculator" ng-controller="Converter">
         <div ng-model="error" class="error-readout">{{error}}</div>
-            <input class="readout" type='readonly' disabled ng-model="consoleRate">
+            <input class="readout total" type='readonly' disabled ng-model="totalCal">
         <input class="readout" type='readonly' disabled ng-model="consoleQty">
 
         <div class="keys" data-ng-init="fetchAllCurrencies()">
@@ -40,11 +40,11 @@
                 <button class="key numeric" ng-click="print(1)">1</button>
                 <button class="key numeric" ng-click="print(2)">2</button>
                 <button class="key numeric" ng-click="print(3)">3</button>
-                <button class="key function" ng-click="clearTotal()">C</button>
+                <button class="key function" ng-click="clearTotal()">x</button>
             </div>
             <div class="row">
                 <button class="key numeric" ng-click="print('.')">.</button>
-                <button class="key function double" ng-model="from_curr">
+                <button class="key function double" ng-model="rate">Rate {{rate}}
                    <!-- <span ng-model="from_curr"></span> -
                     <span ng-model="to_curr"></span>-->
                 </button>

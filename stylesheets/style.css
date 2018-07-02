@@ -26,6 +26,10 @@ body {
   font-weight: 100;
 }
 
+.total{
+  color: #d6d5dc;!important;
+}
+
 .error-readout{
   background: red;
   color: white;
@@ -60,6 +64,7 @@ sub {
   border-bottom: 1px solid #343434;
   border-left: 1px solid #646464;
   border-top: 1px solid #939393;
+  box-shadow(0, 0, 20px, 0,rgba(50,50,50,0.75), false);
 }
 
 
