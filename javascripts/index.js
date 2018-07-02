@@ -155,7 +155,9 @@ function Converter($scope, $http) {
                         $scope.rate = rate.toFixed(3);
 
                         if ($scope.consoleQty!==undefined) {
-                            $scope.totalCal = $scope.consoleQty * $scope.rate;
+
+                            let total= $scope.consoleQty * $scope.rate;
+                            $scope.totalCal=total.toFixed(3)
                         }
 
 
@@ -213,7 +215,8 @@ function Converter($scope, $http) {
                     $scope.consoleQty = n;
                 }else{
                     $scope.consoleQty = $scope.consoleQty.toLocaleString() + n;
-                    $scope.totalCal = $scope.rate * $scope.consoleQty;
+                   let total = $scope.rate * $scope.consoleQty;
+                    $scope.totalCal=total.toFixed(3)
                 }
 
     }
@@ -225,6 +228,7 @@ function Converter($scope, $http) {
        // $scope.consoleQty = "";
         if($scope.consoleQty)
         $scope.consoleQty  = $scope.consoleQty.slice(0, $scope.consoleQty.length-1);
-        $scope.totalCal = $scope.consoleQty * $scope.rate;
+        let total= $scope.consoleQty * $scope.rate;
+        $scope.totalCal=total.toFixed(3)
     }
 }
